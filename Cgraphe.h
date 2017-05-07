@@ -15,6 +15,7 @@ private :
 public :
     Cgraphe();
     Cgraphe(Csommet ** l);
+    Cgraphe(char * fileName);
     ~Cgraphe();
 
     void afficher();
