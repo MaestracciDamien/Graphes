@@ -11,13 +11,22 @@
 class Csommet {
 private :
     int iNumSommet;
-    Carc ** lArcsPartans;
+    Carc ** lArcsSortants;
     Carc ** lArcsEntrants;
 
 public :
     Csommet(int iNum);
     Csommet(int iNum, Carc ** lOut, Carc ** lIn );
     ~Csommet();
+
+    void ajoutArcEntrant(Carc * arc);
+    void ajoutArcSortant(Carc * arc);
+    void supArcEntrant (int numArc);
+    void supArcSortant (int numArc);
+    void modifArcEntrant(int numArc, Carc * arc);
+    void modifArcSortant(int numArc, Carc * arc);
+
+
 };
 
 
