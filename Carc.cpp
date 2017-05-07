@@ -12,7 +12,7 @@ Carc::Carc(int iNum)
 
 void Carc::afficher()
 {
-    cout << this->iNumDestination ;
+    cout << "Arc Destination : " <<this->iNumDestination << endl;
 }
 
 Carc::~Carc()

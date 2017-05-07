@@ -53,6 +53,10 @@ public :
     bool isArcinSortant(Carc *arc);
 
     void afficher();
+
+    bool operator==(const Csommet &rhs) const;
+
+    bool operator!=(const Csommet &rhs) const;
 };
 
 

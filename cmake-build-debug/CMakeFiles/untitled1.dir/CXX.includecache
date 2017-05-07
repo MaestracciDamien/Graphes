@@ -6,13 +6,29 @@
 
 #IncludeRegexTransform: 
 
+/cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/CException.cpp
+CException.h
+/cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/CException.h
+
+/cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/CException.h
+exception
+-
+iostream
+-
+
 /cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/Carc.cpp
 Carc.h
 /cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/Carc.h
+iostream
+-
 
 /cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/Carc.h
 
 /cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/Cgraphe.cpp
+cstdlib
+-
+iostream
+-
 Cgraphe.h
 /cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/Cgraphe.h
 
@@ -21,6 +37,10 @@ Csommet.h
 /cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/Csommet.h
 
 /cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/Csommet.cpp
+stdlib.h
+-
+iostream
+-
 Csommet.h
 /cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/Csommet.h
 
@@ -31,4 +51,8 @@ Carc.h
 /cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/main.cpp
 iostream
 -
+Carc.h
+/cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/Carc.h
+Csommet.h
+/cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/Csommet.h
 

@@ -11,11 +11,11 @@
 class Cgraphe {
 private :
     Csommet **lSommets;
+    int iNbSommets;
 
 public :
     Cgraphe();
-    Cgraphe(Csommet ** l);
-    Cgraphe(char * fileName);
+    Cgraphe(Csommet ** l, int nb);
     ~Cgraphe();
 
     void afficher();
@@ -29,6 +29,7 @@ public :
     void setLSommets(Csommet **lSommets);
 
 
+    bool isSommetinGraphe(Csommet * s);
 };
 
 

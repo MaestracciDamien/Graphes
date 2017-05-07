@@ -3,5 +3,5 @@ project(untitled1)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp Carc.cpp Carc.h Csommet.cpp Csommet.h Cgraphe.cpp Cgraphe.h)
+set(SOURCE_FILES main.cpp Carc.cpp Carc.h Csommet.cpp Csommet.h Cgraphe.cpp Cgraphe.h CException.cpp CException.h)
 add_executable(untitled1 ${SOURCE_FILES})

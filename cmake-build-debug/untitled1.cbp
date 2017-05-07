@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/CException.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/CException.h">
+			<Option target="untitled1"/>
+		</Unit>
 		<Unit filename="/cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/Carc.cpp">
 			<Option target="untitled1"/>
 		</Unit>
