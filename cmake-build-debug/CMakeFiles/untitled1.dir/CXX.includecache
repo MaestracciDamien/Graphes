@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/Carc.cpp
+Carc.h
+/cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/Carc.h
+
+/cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/Carc.h
+
+/cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/Cgraphe.cpp
+Cgraphe.h
+/cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/Cgraphe.h
+
+/cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/Cgraphe.h
+Csommet.h
+/cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/Csommet.h
+
+/cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/Csommet.cpp
+Csommet.h
+/cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/Csommet.h
+
+/cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/Csommet.h
+Carc.h
+/cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/Carc.h
+
+/cygdrive/c/Users/damie/CLionProjects/projet-Cpp-Les-graphes/main.cpp
+iostream
+-
+

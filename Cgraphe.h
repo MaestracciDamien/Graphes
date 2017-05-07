@@ -10,7 +10,15 @@
 
 class Cgraphe {
 private :
-    Csommet ** lSommets;
+    Csommet **lSommets;
+
+public :
+    Cgraphe();
+    Cgraphe(Csommet ** l);
+    ~Cgraphe();
+
+    void afficher();
+    void loadFromFile(char * fileName);
 };
 
 

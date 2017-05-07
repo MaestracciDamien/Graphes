@@ -13,6 +13,11 @@ private :
     int iNumSommet;
     Carc ** lArcsPartans;
     Carc ** lArcsEntrants;
+
+public :
+    Csommet(int iNum);
+    Csommet(int iNum, Carc ** lOut, Carc ** lIn );
+    ~Csommet();
 };
 
 

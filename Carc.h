@@ -1,4 +1,4 @@
-&//
+//
 // Created by damie on 5/7/2017.
 //
 
@@ -9,6 +9,11 @@
 class Carc {
 private:
     int iNumDestination;
+
+public:
+    Carc(int iNum);
+    ~Carc();
+
 };
 
 
