@@ -13,6 +13,15 @@ private:
 public:
     Carc(int iNum);
     ~Carc();
+    void afficher();
+
+    int getINumDestination() const;
+
+    void setINumDestination(int iNumDestination);
+
+    bool operator==(const Carc &rhs) const;
+
+    bool operator!=(const Carc &rhs) const;
 
 };
 

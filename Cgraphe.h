@@ -19,10 +19,14 @@ public :
     ~Cgraphe();
 
     void afficher();
-    void loadFromFile(char * fileName);
+    Cgraphe loadFromFile(char * fileName);
     void ajoutSommet(Csommet * sommet);
     void supSommet(int numSommet);
     void modifSommet(int numSommet, Csommet * sommet);
+
+    Csommet **getLSommets() const;
+
+    void setLSommets(Csommet **lSommets);
 
 
 };

@@ -13,6 +13,8 @@ private :
     int iNumSommet;
     Carc ** lArcsSortants;
     Carc ** lArcsEntrants;
+    int nbArcEntrants;
+    int nbArcSortants;
 
 public :
     Csommet(int iNum);
@@ -26,7 +28,31 @@ public :
     void modifArcEntrant(int numArc, Carc * arc);
     void modifArcSortant(int numArc, Carc * arc);
 
+    int getINumSommet() const;
 
+    void setINumSommet(int iNumSommet);
+
+    Carc **getLArcsSortants() const;
+
+    void setLArcsSortants(Carc **lArcsSortants);
+
+    Carc **getLArcsEntrants() const;
+
+    void setLArcsEntrants(Carc **lArcsEntrants);
+
+    int getNbArcEntrants() const;
+
+    void setNbArcEntrants(int nbArcEntrants);
+
+    int getNbArcSortants() const;
+
+    void setNbArcSortants(int nbArcSortants);
+
+    bool isArcinEntrant(Carc *arc);
+
+    bool isArcinSortant(Carc *arc);
+
+    void afficher();
 };
 
 

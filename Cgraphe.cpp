@@ -3,3 +3,11 @@
 //
 
 #include "Cgraphe.h"
+
+Csommet **Cgraphe::getLSommets() const {
+    return lSommets;
+}
+
+void Cgraphe::setLSommets(Csommet **lSommets) {
+    Cgraphe::lSommets = lSommets;
+}
