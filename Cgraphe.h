@@ -23,6 +23,7 @@ public :
     void ajoutSommet(Csommet * sommet);
     void supSommet(int numSommet);
     void modifSommet(int numSommet, Csommet * sommet);
+    void relierSommet(Csommet * dep, Csommet * arr);
 
     Csommet **getLSommets() const;
 
@@ -30,6 +31,8 @@ public :
 
 
     bool isSommetinGraphe(Csommet * s);
+
+    int getPosSommet(Csommet * sommet);
 };
 
 

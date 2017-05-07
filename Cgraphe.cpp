@@ -77,3 +77,27 @@ bool Cgraphe::isSommetinGraphe(Csommet * s)
 void Cgraphe::modifSommet(int numSommet, Csommet *sommet) {
 
 }
+
+void Cgraphe::relierSommet(Csommet *dep, Csommet * arr) {
+    if (this->isSommetinGraphe(dep) && this->isSommetinGraphe(arr))
+    {
+        int posA = this->getPosSommet(dep);
+        int posB = this->getPosSommet(arr);
+        Carc arcA= arr->getINumSommet();
+        Carc arcB = dep->getINumSommet();
+        this->lSommets[posA]->ajoutArcSortant(&arcA);
+        this->lSommets[posB]->ajoutArcEntrant(&arcB);
+    }
+    else throw invalid_argument("L'un des sommet n'est pas dans le graphe");
+}
+
+int Cgraphe::getPosSommet(Csommet * sommet)
+{
+    if (this->isSommetinGraphe(sommet))
+    {
+        for (int i = 0; i <this->iNbSommets ; ++i) {
+            if (lSommets[i] == sommet) return i;
+        }
+    }
+    else throw invalid_argument("Le sommet n'est pas dans le graphe");
+}
