@@ -69,7 +69,7 @@ bool Cgraphe::isSommetinGraphe(Csommet * s)
     int i=0;
     while(!retour && i<this->iNbSommets)
     {
-        if(s == lSommets[i]) retour = true;
+        if(*s == *lSommets[i]) retour = true;
         i++;
     }
     return retour;
@@ -99,7 +99,7 @@ int Cgraphe::getPosSommet(Csommet * sommet)
     if (this->isSommetinGraphe(sommet))
     {
         for (int i = 0; i <this->iNbSommets ; ++i) {
-            if (lSommets[i] == sommet) return i;
+            if (*lSommets[i] == *sommet) return i;
         }
     }
     else throw invalid_argument("Le sommet n'est pas dans le graphe");
