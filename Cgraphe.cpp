@@ -54,6 +54,7 @@ void Cgraphe::ajoutSommet(Csommet *sommet) {
     else{
         this->iNbSommets++;
         lSommets = (Csommet **) realloc(lSommets, sizeof(Csommet *) * this->iNbSommets);
+        lSommets[this->iNbSommets-1] = sommet;
     }
 }
 
@@ -83,10 +84,12 @@ void Cgraphe::relierSommet(Csommet *dep, Csommet * arr) {
     {
         int posA = this->getPosSommet(dep);
         int posB = this->getPosSommet(arr);
-        Carc arcA= arr->getINumSommet();
-        Carc arcB = dep->getINumSommet();
-        this->lSommets[posA]->ajoutArcSortant(&arcA);
-        this->lSommets[posB]->ajoutArcEntrant(&arcB);
+        Carc * arcA= (Carc *) malloc(sizeof(Carc));
+        arcA->setINumDestination(arr->getINumSommet());
+        Carc * arcB= (Carc *) malloc(sizeof(Carc));
+        arcB->setINumDestination(dep->getINumSommet());
+        this->lSommets[posA]->ajoutArcSortant(arcA);
+        this->lSommets[posB]->ajoutArcEntrant(arcB);
     }
     else throw invalid_argument("L'un des sommet n'est pas dans le graphe");
 }

@@ -84,6 +84,7 @@ void Csommet::ajoutArcSortant(Carc *arc) {
         this->nbArcSortants++;
         lArcsSortants = (Carc **) realloc(lArcsSortants,sizeof(Carc *)*this->nbArcSortants);
         this->lArcsSortants[this->nbArcSortants-1] = arc;
+        this->lArcsSortants[this->nbArcSortants-1];
     }
 }
 
