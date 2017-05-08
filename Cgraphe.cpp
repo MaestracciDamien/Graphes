@@ -129,8 +129,6 @@ Cgraphe Cgraphe::loadFromFile(char *fileName) {
             int iNum = atoi(sNum.substr(7, 5).c_str());
             graphe.ajoutSommet(new Csommet(iNum));
         }
-        graphe.afficher();
-        std::cout << sizeof(graphe.lSommets)-1 << std::endl;
         string sSommet;
         for (unsigned int i = 0; i < 2; i++) {
             getline(fichier,sSommet);
@@ -139,14 +137,12 @@ Cgraphe Cgraphe::loadFromFile(char *fileName) {
             getline(fichier, sSommet);
             int uiSommetDebut = atoi(sSommet.substr(6, 1).c_str()); //num sommet Debut
             int uiSommetFin = atoi(sSommet.substr(13, 5).c_str()); // num sommet Fin
-            std::cout << uiSommetDebut << " , " << uiSommetFin << endl;
             // Ajout Arcs
 
             Csommet * sommetDebut = (Csommet *) malloc(sizeof(Csommet));
             sommetDebut->setINumSommet(uiSommetDebut);
             Csommet * sommetFin = (Csommet *) malloc(sizeof(Csommet));
             sommetFin->setINumSommet(uiSommetFin);
-            std::cout << "Ajout Arcs" << std::endl;
             graphe.relierSommet(sommetDebut,sommetFin);
 
         }
