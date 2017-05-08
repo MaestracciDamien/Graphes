@@ -19,7 +19,7 @@ public :
     ~Cgraphe();
 
     void afficher();
-    Cgraphe loadFromFile(char * fileName);
+    static Cgraphe loadFromFile(char * fileName);
     void ajoutSommet(Csommet * sommet);
     void supSommet(int numSommet);
     void modifSommet(int numSommet, Csommet * sommet);

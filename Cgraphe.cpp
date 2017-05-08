@@ -4,6 +4,7 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <fstream>
 #include "Cgraphe.h"
 
 using namespace std;
@@ -103,4 +104,53 @@ int Cgraphe::getPosSommet(Csommet * sommet)
         }
     }
     else throw invalid_argument("Le sommet n'est pas dans le graphe");
+}
+
+
+
+
+Cgraphe Cgraphe::loadFromFile(char *fileName) {
+    Cgraphe graphe = Cgraphe();
+    string sNomFichier = fileName;
+    ifstream fichier(sNomFichier.c_str()); // on ouvre le fichier en lecture
+    if (fichier) { // on verifie si le fichier est bien ouvert
+        string sNBSommet;
+        getline(fichier, sNBSommet);
+        unsigned int uiNBSommet = atoi(sNBSommet.substr(10, 5).c_str());
+
+        string sNBArcs;
+        getline(fichier, sNBArcs);
+        unsigned int uiNBArcs = atoi(sNBArcs.substr(7, 5).c_str());
+
+        string sNum;
+        getline(fichier, sNum);
+        for (unsigned int i = 0; i < uiNBSommet; i++) {
+            getline(fichier, sNum);
+            int iNum = atoi(sNum.substr(7, 5).c_str());
+            graphe.ajoutSommet(new Csommet(iNum));
+        }
+        graphe.afficher();
+        std::cout << sizeof(graphe.lSommets)-1 << std::endl;
+        string sSommet;
+        for (unsigned int i = 0; i < 2; i++) {
+            getline(fichier,sSommet);
+        }
+        for (unsigned int i = 0; i < uiNBArcs; i++) {
+            getline(fichier, sSommet);
+            int uiSommetDebut = atoi(sSommet.substr(6, 1).c_str()); //num sommet Debut
+            int uiSommetFin = atoi(sSommet.substr(13, 5).c_str()); // num sommet Fin
+            std::cout << uiSommetDebut << " , " << uiSommetFin << endl;
+            // Ajout Arcs
+
+            Csommet * sommetDebut = (Csommet *) malloc(sizeof(Csommet));
+            sommetDebut->setINumSommet(uiSommetDebut);
+            Csommet * sommetFin = (Csommet *) malloc(sizeof(Csommet));
+            sommetFin->setINumSommet(uiSommetFin);
+            std::cout << "Ajout Arcs" << std::endl;
+            graphe.relierSommet(sommetDebut,sommetFin);
+
+        }
+        fichier.close();
+        return graphe;
+    }
 }
