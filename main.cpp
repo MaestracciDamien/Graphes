@@ -8,6 +8,8 @@ int main(int argc,char* argv[]) {
 
 
     Cgraphe test = Cgraphe::loadFromFile(argv[1]);
-    test.afficher();
+    test.afficherXML();
+    test.inverserArcs();
+    test.afficherXML();
     return 0;
 }

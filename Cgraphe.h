@@ -33,6 +33,10 @@ public :
     bool isSommetinGraphe(Csommet * s);
 
     int getPosSommet(Csommet * sommet);
+
+    void afficherXML();
+
+    void inverserArcs();
 };
 
 

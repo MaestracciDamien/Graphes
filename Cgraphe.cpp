@@ -48,6 +48,28 @@ void Cgraphe::afficher() {
 
 }
 
+void Cgraphe::afficherXML(){
+    int iNbArcs =0;
+    cout << "NBSommets=" << this->iNbSommets<<endl;
+    for (int i = 0; i < this->iNbSommets ; ++i) {
+        iNbArcs += this->lSommets[i]->getNbArcSortants();
+    }
+    cout <<"NBArcs=" << iNbArcs << endl;
+    cout <<"Sommets=[" << endl;
+    for (int i = 0; i < this->iNbSommets ; ++i) {
+        cout << "Numero=" << this->lSommets[i]->getINumSommet()<<endl;
+    }
+    cout << "]" << endl;
+    cout << "Arcs=[" <<endl;
+    for (int i = 0; i < this->iNbSommets ; ++i) {
+        for (int j = 0; j < this->lSommets[i]->getNbArcSortants(); ++j) {
+            cout << "Debut="<<this->lSommets[i]->getINumSommet() << ", Fin=" <<this->lSommets[i]->getLArcsSortants()[j]->getINumDestination() <<endl;
+
+        }
+    }
+    cout << "]" << endl;
+}
+
 void Cgraphe::ajoutSommet(Csommet *sommet) {
     if(this->isSommetinGraphe(sommet)){
         throw invalid_argument("Le sommet est déja dans la liste");
@@ -107,6 +129,18 @@ int Cgraphe::getPosSommet(Csommet * sommet)
 }
 
 
+void Cgraphe::inverserArcs(){
+    Carc ** pTmp ;
+    int iTmp;
+    for (int i = 0; i <this->iNbSommets ; ++i) {
+        pTmp = this->lSommets[i]->getLArcsEntrants();
+        iTmp = this->lSommets[i]->getNbArcEntrants();
+        this->lSommets[i]->setLArcsEntrants(this->lSommets[i]->getLArcsSortants());
+        this->lSommets[i]->setLArcsSortants(pTmp);
+        this->lSommets[i]->setNbArcEntrants(this->lSommets[i]->getNbArcSortants());
+        this->lSommets[i]->setNbArcSortants(iTmp);
+    }
+}
 
 
 Cgraphe Cgraphe::loadFromFile(char *fileName) {
