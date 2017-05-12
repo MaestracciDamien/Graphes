@@ -16,11 +16,21 @@ void Cgraphe::setLSommets(Csommet **lSommets) {
     Cgraphe::lSommets = lSommets;
 }
 
+
 Cgraphe::Cgraphe() {
     this->iNbSommets = 0 ;
     this->lSommets = nullptr;
 }
 
+Cgraphe::Cgraphe(const Cgraphe & source)
+{
+    int iNbSommet = source.getINbSommets();
+    this->iNbSommets = iNbSommet;
+    this->lSommets = (Csommet **) malloc(sizeof(Csommet*) * iNbSommet);
+    for (int i = 0; i < iNbSommet; ++i) {
+        this->lSommets[i] =  new Csommet( *(source.getLSommets()[i]));
+    }
+}
 Cgraphe::Cgraphe(Csommet **l, int nb) {
     this->lSommets = l;
     this->iNbSommets = nb;
@@ -129,17 +139,19 @@ int Cgraphe::getPosSommet(Csommet * sommet)
 }
 
 
-void Cgraphe::inverserArcs(){
+Cgraphe* Cgraphe::inverserArcs(){
+    Cgraphe *retour = new Cgraphe(*this);
     Carc ** pTmp ;
     int iTmp;
-    for (int i = 0; i <this->iNbSommets ; ++i) {
-        pTmp = this->lSommets[i]->getLArcsEntrants();
-        iTmp = this->lSommets[i]->getNbArcEntrants();
-        this->lSommets[i]->setLArcsEntrants(this->lSommets[i]->getLArcsSortants());
-        this->lSommets[i]->setLArcsSortants(pTmp);
-        this->lSommets[i]->setNbArcEntrants(this->lSommets[i]->getNbArcSortants());
-        this->lSommets[i]->setNbArcSortants(iTmp);
+    for (int i = 0; i <retour->iNbSommets ; ++i) {
+        pTmp = retour->lSommets[i]->getLArcsEntrants();
+        iTmp = retour->lSommets[i]->getNbArcEntrants();
+        retour->lSommets[i]->setLArcsEntrants(retour->lSommets[i]->getLArcsSortants());
+        retour->lSommets[i]->setLArcsSortants(pTmp);
+        retour->lSommets[i]->setNbArcEntrants(retour->lSommets[i]->getNbArcSortants());
+        retour->lSommets[i]->setNbArcSortants(iTmp);
     }
+    return retour;
 }
 
 
@@ -183,4 +195,12 @@ Cgraphe Cgraphe::loadFromFile(char *fileName) {
         fichier.close();
         return graphe;
     }
+}
+
+int Cgraphe::getINbSommets() const {
+    return iNbSommets;
+}
+
+void Cgraphe::setINbSommets(int iNbSommets) {
+    Cgraphe::iNbSommets = iNbSommets;
 }

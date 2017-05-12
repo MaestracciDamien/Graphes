@@ -18,6 +18,7 @@ private :
 
 public :
     Csommet(int iNum);
+    Csommet(const Csommet&);
     Csommet(int iNum, Carc ** lOut, Carc ** lIn );
     ~Csommet();
 

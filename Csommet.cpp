@@ -16,13 +16,26 @@ Csommet::Csommet(int iNum) {
 }
 
 
+Csommet::Csommet(const Csommet& source){
+    this->iNumSommet = source.getINumSommet();
+    this->nbArcEntrants = source.getNbArcEntrants();
+    this->nbArcSortants = source.getNbArcSortants();
+    this->lArcsEntrants = (Carc **) malloc( sizeof(Carc *) * this->getNbArcEntrants());
+    this->lArcsSortants = (Carc **) malloc( sizeof(Carc *) * this->getNbArcSortants());
+    for (int i = 0; i < this->getNbArcEntrants(); ++i) {
+        this->lArcsEntrants[i] = new Carc(source.getLArcsEntrants()[i]->getINumDestination());
+    }
+    for (int i = 0; i < this->getNbArcSortants(); ++i) {
+        this->lArcsSortants[i] = new Carc(source.getLArcsSortants()[i]->getINumDestination());
+    }
 
+}
 Csommet::~Csommet() {
     if (this->lArcsSortants != nullptr)
     {
         for(int i= 0 ; i< this->nbArcSortants; i++)
         {
-            free(lArcsSortants[i]);
+            delete this->lArcsSortants[i];
         }
         free(lArcsSortants);
     }
@@ -30,7 +43,7 @@ Csommet::~Csommet() {
     {
         for(int i= 0 ; i< this->nbArcEntrants; i++)
         {
-            free(lArcsEntrants[i]);
+            delete this->lArcsEntrants[i];
         }
         free(lArcsEntrants);
     }

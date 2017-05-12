@@ -15,6 +15,7 @@ private :
 
 public :
     Cgraphe();
+    Cgraphe(const Cgraphe&);
     Cgraphe(Csommet ** l, int nb);
     ~Cgraphe();
 
@@ -36,7 +37,11 @@ public :
 
     void afficherXML();
 
-    void inverserArcs();
+    Cgraphe * inverserArcs();
+
+    int getINbSommets() const;
+
+    void setINbSommets(int iNbSommets);
 };
 
 
